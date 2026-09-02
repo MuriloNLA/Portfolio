@@ -53,6 +53,8 @@ assets/
   css/style.css           todo o visual
   js/main.js              menu mobile + fade-in
   img/avatar-placeholder.svg
+  img/favicon.svg         ícone da aba (claro/escuro automático)
+  img/favicon.png         fallback para navegadores sem suporte a favicon em SVG
 README.md
 ```
 

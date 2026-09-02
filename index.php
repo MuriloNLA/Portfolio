@@ -47,6 +47,8 @@ $secoes = [
 <title><?= e($perfil['nome']) ?> — Currículo e portfólio</title>
 <meta name="description" content="<?= e($perfil['momento']) ?>">
 <meta name="author" content="<?= e($perfil['nome']) ?>">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="stylesheet" href="assets/css/style.css">
 <!-- Sem JavaScript o fade-in não roda: o conteúdo precisa aparecer mesmo assim. -->
 <noscript>
