@@ -11,14 +11,14 @@ return [
     // Linha logo abaixo do nome. Mantenha curta.
     'momento'    => 'Estudante de Análise e Desenvolvimento de Sistemas e auxiliar de atendimento na BRQ Brasilquimica, automatizando processos da operação com Python.',
 
-    'localizacao' => 'Ribeirão Preto, SP',
+    'localizacao' => 'Batatais, SP',
     'email'       => 'murilonogueira1611@gmail.com',
     'telefone'    => '(16) 99996-5533',
 
     // Caminho da imagem de avatar.
     // Para usar sua foto real: coloque o arquivo em assets/img/ e troque o caminho aqui.
-    'avatar'      => 'assets/img/avatar-placeholder.svg',
-    'avatar_alt'  => 'Avatar de Murilo Nogueira de Lima Araújo',
+    'avatar'      => 'assets/img/avatar.jpg',
+    'avatar_alt'  => 'Foto de Murilo Nogueira de Lima Araújo',
 
     'links' => [
         [
