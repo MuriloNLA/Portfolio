@@ -577,9 +577,20 @@ a.contato__valor:focus-visible { color: var(--acento); }
 
     .menu-botao { display: inline-flex; }
 
-    /* No mobile, a navegação abre e fecha pelo botão */
+    /* No mobile, a navegação abre como painel lateral fixo,
+       assim continua alcançável mesmo com a página rolada. */
     .perfil__nav {
         display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 45;
+        width: min(80vw, 300px);
+        height: 100vh;
+        overflow-y: auto;
+        background: var(--fundo-alto);
+        border-left: 1px solid var(--borda-forte);
+        padding: 5rem 1.5rem 2rem;
     }
     .perfil__nav[data-aberto="true"] {
         display: block;
