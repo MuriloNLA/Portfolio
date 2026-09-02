@@ -7,7 +7,18 @@
 <aside class="perfil" id="painel-perfil">
     <div class="perfil__interno">
 
-        <div class="perfil__banner" aria-hidden="true"></div>
+        <div class="perfil__banner" aria-hidden="true">
+            <span class="perfil__banner-mira perfil__banner-mira--tl"></span>
+            <span class="perfil__banner-mira perfil__banner-mira--tr"></span>
+            <span class="perfil__banner-mira perfil__banner-mira--bl"></span>
+            <span class="perfil__banner-mira perfil__banner-mira--br"></span>
+            <svg class="perfil__banner-cubo" viewBox="0 0 100 100">
+                <polygon points="50,12 82.9,31 82.9,69 50,88 17.1,69 17.1,31" fill="none" stroke="currentColor" stroke-width="3"/>
+                <line x1="50" y1="50" x2="50" y2="12" stroke="currentColor" stroke-width="3"/>
+                <line x1="50" y1="50" x2="17.1" y2="69" stroke="currentColor" stroke-width="3"/>
+                <line x1="50" y1="50" x2="82.9" y2="69" stroke="currentColor" stroke-width="3"/>
+            </svg>
+        </div>
 
         <div class="perfil__corpo">
 

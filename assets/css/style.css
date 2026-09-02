@@ -120,17 +120,45 @@ a {
     overflow-y: auto;
 }
 
-/* Faixa decorativa atrás do avatar: mesma cor de destaque do resto do
-   site, sem imagem nenhuma. Trocar --acento no topo do arquivo já
-   muda o brilho aqui junto. */
+/* Faixa decorativa atrás do avatar: estilo painel/HUD, mas com a
+   mesma cor de destaque do resto do site — sem imagem nenhuma.
+   Trocar --acento no topo do arquivo já muda o brilho aqui junto. */
 .perfil__banner {
+    position: relative;
     height: 112px;
+    overflow: hidden;
     background-color: var(--fundo-alto);
     background-image:
         radial-gradient(circle at 22% 20%, var(--acento-fraco), transparent 60%),
-        radial-gradient(var(--borda) 1px, transparent 1.6px);
-    background-size: auto, 16px 16px;
+        radial-gradient(var(--borda) 1px, transparent 1.6px),
+        repeating-linear-gradient(90deg, var(--borda-forte) 0 1px, transparent 1px 9px);
+    background-size: auto, 16px 16px, 100% 6px;
+    background-repeat: no-repeat, repeat, repeat-x;
     border-bottom: 1px solid var(--borda);
+}
+
+/* Cantos de mira, tipo HUD/câmera. */
+.perfil__banner-mira {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid var(--acento);
+    opacity: 0.55;
+}
+.perfil__banner-mira--tl { top: 10px;    left: 10px;  border-right: 0; border-bottom: 0; }
+.perfil__banner-mira--tr { top: 10px;    right: 10px; border-left: 0;  border-bottom: 0; }
+.perfil__banner-mira--bl { bottom: 10px; left: 10px;  border-right: 0; border-top: 0; }
+.perfil__banner-mira--br { bottom: 10px; right: 10px; border-left: 0;  border-top: 0; }
+
+/* Cubo wireframe, um aceno discreto ao estilo de kit gráfico cyberpunk. */
+.perfil__banner-cubo {
+    position: absolute;
+    bottom: 10px;
+    right: 46px;
+    width: 30px;
+    height: 30px;
+    color: var(--acento);
+    opacity: 0.5;
 }
 
 .perfil__corpo {
