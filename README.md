@@ -1,11 +1,33 @@
 # Currículo e portfólio — Murilo Nogueira de Lima Araújo
 
-Site pessoal em HTML, CSS e PHP puro. Sem framework, sem banco de dados, sem painel admin.
-Todo o conteúdo mora em arrays PHP na pasta `dados/`. Para atualizar o site, edite o array e salve.
+[![Deploy](https://github.com/MuriloNLA/Portfolio/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/MuriloNLA/Portfolio/actions/workflows/deploy-pages.yml)
+
+🔗 **[murilonla.github.io/Portfolio](https://murilonla.github.io/Portfolio/)**
+
+![Preview do site](assets/img/readme-preview.png)
+
+Site pessoal de currículo e portfólio, em HTML, CSS e PHP puro — sem framework, sem banco de dados, sem build. Instalável como app na tela de início do celular (PWA) e publicado automaticamente no GitHub Pages a cada push.
 
 ---
 
-## Rodando localmente
+## Sobre o projeto
+
+Em vez de um template pronto, o site foi construído do zero — a ideia é que o próprio código já funcione como prova de trabalho, não só o conteúdo. Todo o currículo (experiência, formação, projetos, stack) mora em arrays PHP simples: dá pra atualizar editando um arquivo, sem tocar em HTML.
+
+Alguns detalhes técnicos, caso esteja avaliando o código:
+
+- **Zero dependências** — sem Bootstrap, Tailwind, jQuery ou fontes de CDN. Só PHP, CSS e JS próprios.
+- **Deploy automático** — uma GitHub Action renderiza o PHP em HTML estático a cada push e publica no GitHub Pages.
+- **PWA** — dá pra instalar como app no iPhone/Android: ícone próprio, abre sem a barra do navegador.
+- **Funciona sem JavaScript** — um fallback via `<noscript>` garante que nada fica escondido se o JS estiver desativado, e a navegação é 100% acessível por teclado e leitor de tela.
+
+---
+
+## Para quem for mexer no código
+
+Daqui pra baixo é guia de manutenção — como rodar localmente, a estrutura de pastas e como editar cada dado. Útil se você é eu daqui a três meses, ou se está curioso sobre como o site funciona por dentro.
+
+### Rodando localmente
 
 Requisito: **PHP 8.0 ou superior** (o código usa `str_starts_with`). Confira com:
 
@@ -27,7 +49,7 @@ Para parar: `Ctrl + C` no terminal.
 
 ### Publicando
 
-Qualquer hospedagem com suporte a PHP serve (Hostinger, Hostgator, InfinityFree, um VPS...). Envie a pasta inteira por FTP e aponte o domínio para ela. Como não há banco nem variável de ambiente, não existe configuração extra.
+O push para `main` já publica sozinho via GitHub Actions (veja `.github/workflows/deploy-pages.yml`). Pra hospedar em outro lugar, qualquer hospedagem com suporte a PHP serve (Hostinger, Hostgator, InfinityFree, um VPS...) — envie a pasta inteira e aponte o domínio para ela. Como não há banco nem variável de ambiente, não existe configuração extra.
 
 ---
 
@@ -52,12 +74,14 @@ partials/                 o HTML de cada bloco (mexer só para mudar layout)
 assets/
   css/style.css           todo o visual
   js/main.js              menu mobile + fade-in
-  img/avatar-placeholder.svg
+  img/avatar.jpg              foto de perfil
+  img/avatar-placeholder.svg  silhueta genérica, mantida como fallback
   img/favicon.svg         ícone da aba (claro/escuro automático)
   img/favicon.png         fallback para navegadores sem suporte a favicon em SVG
   img/apple-touch-icon.png    ícone ao adicionar à Tela de Início no iPhone
   img/icon-192.png            ícone do manifest.json (Android/Chrome)
   img/icon-512.png            idem, em tamanho maior
+  img/readme-preview.png      screenshot usado só aqui no README
 manifest.json             metadados de instalação como app (PWA)
 README.md
 ```
@@ -115,29 +139,17 @@ Não há nível nem porcentagem, e isso é proposital: "Python 80%" não signifi
 
 `dados/perfil.php`, chave `'sobre'`. Cada string do array vira um parágrafo.
 
----
+### Trocar a foto do avatar
 
-## Trocar o avatar pela foto real
-
-Hoje o site usa uma silhueta genérica em `assets/img/avatar-placeholder.svg`.
-
-1. Recorte sua foto em **formato quadrado** (o CSS arredonda, mas não corta bem retângulo). Algo em torno de 400×400 px já basta — o avatar é exibido a 104 px.
-2. Salve em `assets/img/`, por exemplo `assets/img/murilo.jpg`.
-3. Em `dados/perfil.php`, troque:
+`dados/perfil.php`, chave `'avatar'`. Salve a nova imagem em `assets/img/`, recortada em **formato quadrado**
+(o CSS arredonda, mas não corta bem retângulo — algo em torno de 400×400 px já basta, já que o avatar é exibido a 104 px)
+e aponte o caminho:
 
 ```php
-'avatar' => 'assets/img/avatar-placeholder.svg',
+'avatar' => 'assets/img/nome-do-arquivo.jpg',
 ```
 
-por:
-
-```php
-'avatar' => 'assets/img/murilo.jpg',
-```
-
-4. Ajuste o `avatar_alt` se quiser. Pronto — não precisa mexer em CSS.
-
-Mantenha o arquivo do placeholder no repositório: ele é o fallback se você quiser voltar atrás.
+Ajuste o `avatar_alt` junto. `avatar-placeholder.svg` fica guardado no repositório como fallback, caso queira voltar à silhueta genérica.
 
 ---
 
