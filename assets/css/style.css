@@ -118,15 +118,32 @@ a {
     top: 0;
     max-height: 100vh;
     overflow-y: auto;
-    padding: clamp(2rem, 4vw, 3.25rem) clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+/* Faixa decorativa atrás do avatar: mesma cor de destaque do resto do
+   site, sem imagem nenhuma. Trocar --acento no topo do arquivo já
+   muda o brilho aqui junto. */
+.perfil__banner {
+    height: 112px;
+    background-color: var(--fundo-alto);
+    background-image:
+        radial-gradient(circle at 22% 20%, var(--acento-fraco), transparent 60%),
+        radial-gradient(var(--borda) 1px, transparent 1.6px);
+    background-size: auto, 16px 16px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.perfil__corpo {
+    padding: 0 clamp(1.5rem, 2.5vw, 2.25rem) clamp(2rem, 4vw, 3.25rem);
 }
 
 .perfil__avatar {
     width: 104px;
     height: 104px;
     border-radius: 50%;
-    border: 1px solid var(--borda-forte);
+    border: 3px solid var(--fundo-fundo);
     background: var(--fundo-alto);
+    margin-top: -52px;
     margin-bottom: 1.5rem;
 }
 
@@ -572,7 +589,10 @@ a.contato__valor:focus-visible { color: var(--acento); }
         position: static;
         max-height: none;
         overflow: visible;
-        padding: 3.5rem 1.5rem 2rem;
+    }
+
+    .perfil__corpo {
+        padding: 0 1.5rem 2rem;
     }
 
     .menu-botao { display: inline-flex; }

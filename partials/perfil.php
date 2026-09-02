@@ -7,6 +7,10 @@
 <aside class="perfil" id="painel-perfil">
     <div class="perfil__interno">
 
+        <div class="perfil__banner" aria-hidden="true"></div>
+
+        <div class="perfil__corpo">
+
         <img class="perfil__avatar"
              src="<?= e($perfil['avatar']) ?>"
              alt="<?= e($perfil['avatar_alt']) ?>"
@@ -46,6 +50,8 @@
                 <?php endforeach; ?>
             </ul>
         </nav>
+
+        </div>
 
     </div>
 </aside>
