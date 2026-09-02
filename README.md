@@ -55,6 +55,10 @@ assets/
   img/avatar-placeholder.svg
   img/favicon.svg         ícone da aba (claro/escuro automático)
   img/favicon.png         fallback para navegadores sem suporte a favicon em SVG
+  img/apple-touch-icon.png    ícone ao adicionar à Tela de Início no iPhone
+  img/icon-192.png            ícone do manifest.json (Android/Chrome)
+  img/icon-512.png            idem, em tamanho maior
+manifest.json             metadados de instalação como app (PWA)
 README.md
 ```
 

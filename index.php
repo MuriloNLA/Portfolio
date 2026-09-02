@@ -49,6 +49,17 @@ $secoes = [
 <meta name="author" content="<?= e($perfil['nome']) ?>">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+<!-- "Adicionar à Tela de Início" no iPhone: ícone próprio e abertura
+     em modo app, sem a barra do Safari. -->
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Murilo Nogueira">
+<meta name="theme-color" content="#0e0f11">
+<link rel="manifest" href="manifest.json">
+
 <link rel="stylesheet" href="assets/css/style.css?v=<?= filemtime($raiz . '/assets/css/style.css') ?>">
 <!-- Sem JavaScript o fade-in não roda: o conteúdo precisa aparecer mesmo assim. -->
 <noscript>
