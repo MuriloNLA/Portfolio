@@ -28,8 +28,8 @@ return [
         ],
         [
             'rotulo' => 'LinkedIn',
-            'url'    => 'https://www.linkedin.com/in/murilo-nogueira-788526324',
-            'handle' => 'murilo-nogueira',
+            'url'    => 'https://www.linkedin.com/in/murilo-ara%C3%BAjo-788526324',
+            'handle' => 'murilo-araújo',
         ],
         [
             'rotulo' => 'E-mail',
