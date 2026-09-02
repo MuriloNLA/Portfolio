@@ -49,7 +49,7 @@ $secoes = [
 <meta name="author" content="<?= e($perfil['nome']) ?>">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=<?= filemtime($raiz . '/assets/css/style.css') ?>">
 <!-- Sem JavaScript o fade-in não roda: o conteúdo precisa aparecer mesmo assim. -->
 <noscript>
     <style>
@@ -88,6 +88,6 @@ $secoes = [
 
 </div>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=<?= filemtime($raiz . '/assets/js/main.js') ?>" defer></script>
 </body>
 </html>

@@ -150,16 +150,17 @@ a {
 .perfil__banner-mira--bl { bottom: 10px; left: 10px;  border-right: 0; border-top: 0; }
 .perfil__banner-mira--br { bottom: 10px; right: 10px; border-left: 0;  border-top: 0; }
 
-/* Cubo wireframe, um aceno discreto ao estilo de kit gráfico cyberpunk. */
-.perfil__banner-cubo {
+/* Cubo wireframe e globo, um aceno discreto ao estilo de kit gráfico cyberpunk. */
+.perfil__banner-cubo,
+.perfil__banner-globo {
     position: absolute;
-    bottom: 10px;
-    right: 46px;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     color: var(--acento);
     opacity: 0.5;
 }
+.perfil__banner-cubo  { bottom: 10px; right: 46px; }
+.perfil__banner-globo { top: 14px;    left: 34px; }
 
 .perfil__corpo {
     padding: 0 clamp(1.5rem, 2.5vw, 2.25rem) clamp(2rem, 4vw, 3.25rem);

@@ -18,6 +18,13 @@
                 <line x1="50" y1="50" x2="17.1" y2="69" stroke="currentColor" stroke-width="3"/>
                 <line x1="50" y1="50" x2="82.9" y2="69" stroke="currentColor" stroke-width="3"/>
             </svg>
+            <svg class="perfil__banner-globo" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="3"/>
+                <ellipse cx="50" cy="50" rx="16" ry="40" fill="none" stroke="currentColor" stroke-width="3"/>
+                <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="3"/>
+                <line x1="14.3" y1="32" x2="85.7" y2="32" stroke="currentColor" stroke-width="2.4"/>
+                <line x1="14.3" y1="68" x2="85.7" y2="68" stroke="currentColor" stroke-width="2.4"/>
+            </svg>
         </div>
 
         <div class="perfil__corpo">
