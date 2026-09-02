@@ -153,7 +153,6 @@ Enquanto `imagem` estiver vazio, o card exibe um retângulo pontilhado marcando 
 
 ## Pendências
 
-- [ ] **URL do LinkedIn.** Em `dados/perfil.php` o link está como `'url' => '#'`, marcado com um `TODO` no comentário. Troque pela URL do perfil quando ela existir e ajuste o `'handle'` de `'em breve'` para o seu nome de usuário.
 - [ ] Screenshots dos projetos.
 
 ---

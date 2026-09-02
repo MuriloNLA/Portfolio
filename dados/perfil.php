@@ -28,12 +28,8 @@ return [
         ],
         [
             'rotulo' => 'LinkedIn',
-            // ==========================================================
-            // TODO: preencher URL do LinkedIn
-            // Troque o '#' abaixo pela URL completa do perfil.
-            // ==========================================================
-            'url'    => '#',
-            'handle' => 'em breve',
+            'url'    => 'https://www.linkedin.com/in/murilo-nogueira-788526324',
+            'handle' => 'murilo-nogueira',
         ],
         [
             'rotulo' => 'E-mail',
