@@ -167,6 +167,8 @@ a {
 }
 
 .perfil__avatar {
+    position: relative;
+    z-index: 1;
     width: 104px;
     height: 104px;
     border-radius: 50%;
