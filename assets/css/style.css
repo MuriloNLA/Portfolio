@@ -125,7 +125,7 @@ a {
    Trocar --acento no topo do arquivo já muda o brilho aqui junto. */
 .perfil__banner {
     position: relative;
-    height: 112px;
+    height: 92px;
     overflow: hidden;
     background-color: var(--fundo-alto);
     background-image:
@@ -163,37 +163,37 @@ a {
 .perfil__banner-globo { top: 14px;    left: 34px; }
 
 .perfil__corpo {
-    padding: 0 clamp(1.5rem, 2.5vw, 2.25rem) clamp(2rem, 4vw, 3.25rem);
+    padding: 0 clamp(1.5rem, 2.5vw, 2.25rem) clamp(1.5rem, 3vw, 2rem);
 }
 
 .perfil__avatar {
     position: relative;
     z-index: 1;
-    width: 104px;
-    height: 104px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     border: 3px solid var(--fundo-fundo);
     background: var(--fundo-alto);
-    margin-top: -52px;
-    margin-bottom: 1.5rem;
+    margin-top: -44px;
+    margin-bottom: 1rem;
 }
 
 .perfil__nome {
     font-size: 1.4rem;
     letter-spacing: -0.015em;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.3rem;
 }
 
 .perfil__handle {
     color: var(--acento);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .perfil__momento {
     color: var(--texto-medio);
     font-size: 0.92rem;
-    line-height: 1.6;
-    padding-bottom: 1.5rem;
+    line-height: 1.5;
+    padding-bottom: 1rem;
     border-bottom: 1px solid var(--borda);
 }
 
@@ -202,7 +202,7 @@ a {
     align-items: center;
     gap: 0.55rem;
     color: var(--texto-fraco);
-    padding: 1.25rem 0;
+    padding: 0.85rem 0;
     border-bottom: 1px solid var(--borda);
 }
 
@@ -226,7 +226,7 @@ a {
     align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
-    padding: 0.6rem 0;
+    padding: 0.45rem 0;
     border-bottom: 1px solid transparent;
 }
 
@@ -266,11 +266,11 @@ a {
 
 /* Navegação interna */
 
-.perfil__nav { padding-top: 1.5rem; }
+.perfil__nav { padding-top: 1rem; }
 
 .perfil__nav-link {
     display: block;
-    padding: 0.45rem 0 0.45rem 1rem;
+    padding: 0.35rem 0 0.35rem 1rem;
     border-left: 1px solid var(--borda);
     color: var(--texto-fraco);
     text-transform: uppercase;
@@ -285,8 +285,8 @@ a {
 
 .perfil__cv-btn {
     display: block;
-    margin-top: 1.5rem;
-    padding: 0.65rem 1rem;
+    margin-top: 1rem;
+    padding: 0.55rem 1rem;
     border: 1px solid var(--acento);
     color: var(--acento);
     text-align: center;
@@ -637,6 +637,25 @@ a.contato__valor:focus-visible { color: var(--acento); }
 @media (max-width: 1020px) {
     :root { --coluna-perfil: 280px; }
     .linha__item  { grid-template-columns: 160px minmax(0, 1fr); }
+}
+
+/* Janela de desktop baixa (notebook, navegador não maximizado):
+   aperta o menu lateral pra caber sem barra de rolagem própria. */
+@media (min-width: 861px) and (max-height: 820px) {
+    .perfil__corpo { padding-bottom: 1rem; }
+    .perfil__banner { height: 56px; }
+    .perfil__banner-globo,
+    .perfil__banner-cubo { width: 22px; height: 22px; }
+    .perfil__avatar { width: 72px; height: 72px; margin-top: -24px; margin-bottom: 0.6rem; }
+    .perfil__nome { font-size: 1.2rem; }
+    .perfil__handle { margin-bottom: 0.6rem; }
+    .perfil__momento { padding-bottom: 0.6rem; line-height: 1.4; }
+    .perfil__local { padding: 0.5rem 0; }
+    .perfil__links { padding: 0.3rem 0; }
+    .perfil__link { padding: 0.3rem 0; }
+    .perfil__nav { padding-top: 0.6rem; }
+    .perfil__nav-link { padding: 0.25rem 0 0.25rem 1rem; }
+    .perfil__cv-btn { margin-top: 0.6rem; padding: 0.4rem 1rem; }
 }
 
 @media (max-width: 860px) {
