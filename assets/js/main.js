@@ -1,7 +1,8 @@
 /* =============================================================
-   main.js — só duas coisas:
+   main.js — só três coisas:
      1. abrir e fechar a navegação no mobile
-     2. fade-in discreto das seções ao rolar
+     2. lightbox das imagens de projeto
+     3. fade-in discreto das seções ao rolar
 
    Nada além disso. Sem dependência, sem build.
    ============================================================= */
@@ -30,7 +31,67 @@
         });
     }
 
-    /* ---------- 2. Fade-in no scroll ---------- */
+    /* ---------- 2. Lightbox das imagens de projeto ---------- */
+
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImagem = document.getElementById('lightbox-imagem');
+    var lightboxFechar = lightbox && lightbox.querySelector('.lightbox__fechar');
+    var gatilhoLightbox = null;
+
+    function abrirLightbox(img) {
+        lightboxImagem.src = img.currentSrc || img.src;
+        lightboxImagem.alt = img.alt;
+        lightboxImagem.classList.remove('lightbox__imagem--zoom');
+        lightbox.hidden = false;
+        document.body.classList.add('lightbox-aberto');
+        gatilhoLightbox = img;
+        lightboxFechar.focus();
+    }
+
+    function fecharLightbox() {
+        lightbox.hidden = true;
+        lightboxImagem.src = '';
+        document.body.classList.remove('lightbox-aberto');
+        if (gatilhoLightbox) {
+            gatilhoLightbox.focus();
+        }
+    }
+
+    if (lightbox && lightboxImagem && lightboxFechar) {
+        document.querySelectorAll('.projeto__imagem').forEach(function (img) {
+            img.addEventListener('click', function () {
+                abrirLightbox(img);
+            });
+            img.addEventListener('keydown', function (evento) {
+                if (evento.key === 'Enter' || evento.key === ' ') {
+                    evento.preventDefault();
+                    abrirLightbox(img);
+                }
+            });
+        });
+
+        lightboxFechar.addEventListener('click', fecharLightbox);
+
+        // Clicar fora da imagem fecha.
+        lightbox.addEventListener('click', function (evento) {
+            if (evento.target === lightbox) {
+                fecharLightbox();
+            }
+        });
+
+        // Clicar na imagem alterna entre caber na tela e tamanho real.
+        lightboxImagem.addEventListener('click', function () {
+            lightboxImagem.classList.toggle('lightbox__imagem--zoom');
+        });
+
+        document.addEventListener('keydown', function (evento) {
+            if (evento.key === 'Escape' && !lightbox.hidden) {
+                fecharLightbox();
+            }
+        });
+    }
+
+    /* ---------- 3. Fade-in no scroll ---------- */
 
     var alvos = document.querySelectorAll('.revelar');
 

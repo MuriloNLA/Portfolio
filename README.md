@@ -198,4 +198,4 @@ Endereço residencial não aparece em nenhum arquivo — só cidade e estado. Ma
 
 ## JavaScript
 
-`assets/js/main.js` faz exatamente duas coisas: abre e fecha o menu no mobile e aplica um fade-in nas seções ao rolar. Se o JS estiver desativado, um bloco `<noscript>` no `index.php` mantém tudo visível e o menu aberto. O site funciona sem JS.
+`assets/js/main.js` faz exatamente três coisas: abre e fecha o menu no mobile, abre em lightbox as imagens de projeto (clique de novo na imagem alterna entre caber na tela e tamanho real) e aplica um fade-in nas seções ao rolar. Se o JS estiver desativado, um bloco `<noscript>` no `index.php` mantém tudo visível e o menu aberto; as imagens de projeto continuam visíveis nos cards, só sem o lightbox. O site funciona sem JS.

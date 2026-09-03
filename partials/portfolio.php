@@ -30,7 +30,10 @@
                         <img class="projeto__imagem"
                              src="<?= e($projeto['imagem']) ?>"
                              alt="<?= e($projeto['imagem_alt']) ?>"
-                             loading="lazy">
+                             loading="lazy"
+                             tabindex="0"
+                             role="button"
+                             aria-label="Ampliar imagem: <?= e($projeto['imagem_alt']) ?>">
                     <?php else: ?>
                         <div class="projeto__imagem-vazia" role="img"
                              aria-label="Espaço reservado para screenshot de <?= e($projeto['titulo']) ?>">
@@ -75,5 +78,10 @@
 
             </article>
         <?php endforeach; ?>
+    </div>
+
+    <div class="lightbox" id="lightbox" hidden>
+        <button class="lightbox__fechar" type="button" aria-label="Fechar imagem">&times;</button>
+        <img class="lightbox__imagem" id="lightbox-imagem" src="" alt="">
     </div>
 </section>

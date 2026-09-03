@@ -422,7 +422,69 @@ a {
 .projeto__imagem {
     width: 100%;
     border: 1px solid var(--borda);
+    cursor: zoom-in;
+    transition: border-color 0.15s ease;
 }
+
+.projeto__imagem:hover,
+.projeto__imagem:focus-visible {
+    border-color: var(--acento);
+}
+
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: safe center;
+    justify-content: safe center;
+    overflow: auto;
+    padding: 2rem;
+    background: rgba(10, 11, 12, 0.92);
+}
+
+.lightbox[hidden] { display: none; }
+
+.lightbox__imagem {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+    border: 1px solid var(--borda-forte);
+    cursor: zoom-in;
+}
+
+.lightbox__imagem--zoom {
+    max-width: none;
+    max-height: none;
+    cursor: zoom-out;
+}
+
+.lightbox__fechar {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 201;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--borda-forte);
+    background: var(--fundo-alto);
+    color: var(--texto);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.lightbox__fechar:hover,
+.lightbox__fechar:focus-visible {
+    border-color: var(--acento);
+    color: var(--acento);
+}
+
+body.lightbox-aberto { overflow: hidden; }
 
 .projeto__imagem-vazia {
     display: flex;
@@ -729,7 +791,7 @@ a.contato__valor:focus-visible { color: var(--acento); }
 }
 
 @media print {
-    .perfil__nav, .menu-botao, .pular { display: none; }
+    .perfil__nav, .menu-botao, .pular, .lightbox { display: none; }
     body { background: #fff; color: #000; }
     .pagina { grid-template-columns: 1fr; }
     .revelar { opacity: 1; transform: none; }
