@@ -19,6 +19,17 @@
 
 return [
     [
+        'titulo'    => 'Will It Rain On My Parade?',
+        'subtitulo' => 'NASA International Space Apps Challenge 2025',
+        'problema'  => 'Quem planeja um evento ao ar livre com meses de antecedência não tem como saber a chance de chuva pra aquela data específica — previsão do tempo tradicional só cobre poucos dias à frente.',
+        'solucao'   => 'Em equipe, nas 48 horas do hackathon, construímos um sistema web (HTML, CSS e JavaScript) que se conecta a uma API própria em Python. A API consulta dados de satélites da NASA e cruza o histórico climático de anos anteriores da região pra estimar a probabilidade de chuva numa data e local específicos.',
+        'tecnologias' => ['HTML', 'CSS', 'JavaScript', 'Python'],
+        'repo'      => '',
+        'repo_nota' => '',
+        'imagem'     => 'assets/img/nasa-spaceapps-certificado.jpg',
+        'imagem_alt' => 'Certificado de participação no NASA International Space Apps Challenge 2025, emitido para Murilo Nogueira de Lima Araújo',
+    ],
+    [
         'titulo'    => 'OpsView',
         'subtitulo' => 'Dashboard de Inteligência Operacional',
         'problema'  => 'Os dados operacionais de vendas e logística viviam espalhados em planilhas Excel separadas. Não existia uma visão centralizada: para responder uma pergunta simples de operação era preciso abrir vários arquivos e cruzar tudo na mão.',
