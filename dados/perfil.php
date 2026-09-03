@@ -9,7 +9,7 @@ return [
     'apelido'    => 'MuriloNLA',
 
     // Linha logo abaixo do nome. Mantenha curta.
-    'momento'    => 'Estudante de Análise e Desenvolvimento de Sistemas e auxiliar de atendimento na BRQ Brasilquimica, automatizando processos da operação com Python.',
+    'momento'    => 'Estudante de Análise e Desenvolvimento de Sistemas e auxiliar de atendimento na BRQ Brasilquimica, automatizando processos da operação com Python — rumo a uma carreira em DevOps.',
 
     'localizacao' => 'Batatais, SP',
     'email'       => 'murilonogueira1611@gmail.com',
@@ -42,6 +42,6 @@ return [
     'sobre' => [
         'Entrei na BRQ Brasilquimica como jovem aprendiz no atendimento ao cliente e fui efetivado em novembro de 2025. No meio do caminho, comecei a resolver com código os gargalos que eu via todo dia na operação: planilha preenchida à mão, PDF digitado manualmente, print salvo um por um.',
         'O que começou como script para economizar meu próprio tempo virou dashboard usado por gestor para decidir. É assim que eu aprendo: escolho um problema real que me incomoda e construo até funcionar.',
-        'Hoje meu objetivo é full stack, e o que mais me puxa a atenção fora disso é cibersegurança e infraestrutura — entender o que sustenta a aplicação, não só o que aparece na tela.',
+        'Hoje meu objetivo é DevOps: automação, infraestrutura e cibersegurança são exatamente o que mais me puxa a atenção — entender o que sustenta a aplicação, não só o que aparece na tela.',
     ],
 ];
