@@ -50,7 +50,26 @@
                     <a class="perfil__link"
                        href="<?= e($link['url']) ?>"
                        <?php if (str_starts_with($link['url'], 'http')): ?>target="_blank" rel="noopener noreferrer"<?php endif; ?>>
-                        <span class="perfil__link-rotulo mono"><?= e($link['rotulo']) ?></span>
+                        <span class="perfil__link-rotulo mono">
+                            <?php if ($link['rotulo'] === 'GitHub'): ?>
+                                <svg class="perfil__link-icone" viewBox="0 0 24 24" aria-hidden="true">
+                                    <polyline points="8 6 3 12 8 18"/>
+                                    <polyline points="16 6 21 12 16 18"/>
+                                </svg>
+                            <?php elseif ($link['rotulo'] === 'LinkedIn'): ?>
+                                <svg class="perfil__link-icone" viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="7" width="18" height="12" rx="2"/>
+                                    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    <line x1="3" y1="12" x2="21" y2="12"/>
+                                </svg>
+                            <?php elseif ($link['rotulo'] === 'E-mail'): ?>
+                                <svg class="perfil__link-icone" viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                    <polyline points="3 7 12 13 21 7"/>
+                                </svg>
+                            <?php endif; ?>
+                            <?= e($link['rotulo']) ?>
+                        </span>
                         <span class="perfil__link-handle"><?= e($link['handle']) ?></span>
                     </a>
                 </li>

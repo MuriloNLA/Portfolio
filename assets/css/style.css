@@ -231,9 +231,24 @@ a {
 }
 
 .perfil__link-rotulo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     color: var(--texto-fraco);
     text-transform: uppercase;
     flex: none;
+    transition: color 0.15s ease;
+}
+
+.perfil__link-icone {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .perfil__link-handle {
@@ -244,6 +259,8 @@ a {
     transition: color 0.15s ease;
 }
 
+.perfil__link:hover .perfil__link-rotulo,
+.perfil__link:focus-visible .perfil__link-rotulo,
 .perfil__link:hover .perfil__link-handle,
 .perfil__link:focus-visible .perfil__link-handle { color: var(--acento); }
 
