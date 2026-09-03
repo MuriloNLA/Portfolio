@@ -35,7 +35,7 @@
     --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", "Cascadia Mono", Menlo, Consolas, monospace;
 
     /* Métricas */
-    --coluna-perfil: 336px;
+    --coluna-perfil: 370px;
     --respiro:       clamp(1.75rem, 4vw, 4.5rem);
     --max-texto:     68ch;
 }
