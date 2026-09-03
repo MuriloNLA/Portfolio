@@ -26,8 +26,7 @@ return [
         'tecnologias' => ['HTML', 'CSS', 'JavaScript', 'Chart.js', 'Python'],
         'repo'      => 'https://github.com/MuriloNLA/OpsView-Dashboard-de-Inteligencia-peracional',
         'repo_nota' => 'O código-fonte não é público por confidencialidade corporativa. O repositório abaixo contém README e screenshots.',
-        // Para exibir um screenshot: salve a imagem em assets/img/ e coloque o caminho aqui.
-        'imagem'     => '',
+        'imagem'     => 'assets/img/OpsView.png',
         'imagem_alt' => 'Screenshot do dashboard OpsView',
     ],
     [
@@ -38,7 +37,7 @@ return [
         'tecnologias' => ['Python', 'Streamlit'],
         'repo'      => 'https://github.com/MuriloNLA/SalesView-Dashboard-de-Analise-de-Vendas',
         'repo_nota' => '',
-        'imagem'     => '',
+        'imagem'     => 'assets/img/Salesview.png',
         'imagem_alt' => 'Screenshot do dashboard SalesView',
     ],
     [
