@@ -19,6 +19,7 @@ Alguns detalhes técnicos, caso esteja avaliando o código:
 - **Zero dependências** — sem Bootstrap, Tailwind, jQuery ou fontes de CDN. Só PHP, CSS e JS próprios.
 - **Deploy automático** — uma GitHub Action renderiza o PHP em HTML estático a cada push e publica no GitHub Pages.
 - **PWA** — dá pra instalar como app no iPhone/Android: ícone próprio, abre sem a barra do navegador.
+- **CV em PDF** — o botão "Baixar CV" no menu gera um currículo de verdade (fundo claro, uma página, texto selecionável), montado a partir dos mesmos dados de `dados/` e renderizado a cada deploy.
 - **Funciona sem JavaScript** — um fallback via `<noscript>` garante que nada fica escondido se o JS estiver desativado, e a navegação é 100% acessível por teclado e leitor de tela.
 
 ---
@@ -57,6 +58,7 @@ O push para `main` já publica sozinho via GitHub Actions (veja `.github/workflo
 
 ```
 index.php                 carrega os dados e inclui as partials
+curriculo.php             página independente que vira o CV em PDF no build
 dados/                    TODO O CONTEÚDO EDITÁVEL ESTÁ AQUI
   perfil.php              nome, momento atual, links, texto do "Sobre"
   experiencias.php        cargos
@@ -72,7 +74,8 @@ partials/                 o HTML de cada bloco (mexer só para mudar layout)
   formacao.php
   contato.php
 assets/
-  css/style.css           todo o visual
+  css/style.css           todo o visual do site
+  css/curriculo.css       visual próprio do CV em PDF (fundo claro)
   js/main.js              menu mobile + fade-in
   img/avatar.jpg              foto de perfil
   img/avatar-placeholder.svg  silhueta genérica, mantida como fallback
@@ -150,6 +153,16 @@ e aponte o caminho:
 ```
 
 Ajuste o `avatar_alt` junto. `avatar-placeholder.svg` fica guardado no repositório como fallback, caso queira voltar à silhueta genérica.
+
+### O CV em PDF
+
+`curriculo.php` lê os mesmos arquivos de `dados/` — editar experiência, formação, skills ou o texto de
+"Sobre" atualiza o site **e** o PDF juntos, sem trabalho extra. O visual do CV é definido à parte em
+`assets/css/curriculo.css` (fundo claro, pensado pra impressão/ATS, não reaproveita o `style.css` do site).
+
+O PDF em si (`curriculo-murilo-nogueira.pdf`) não fica versionado no repositório: a Action gera ele do zero
+a cada deploy, imprimindo `curriculo.php` com o Chrome em modo headless. Pra conferir uma mudança antes de
+subir, rode o servidor local e abra `http://localhost:8000/curriculo.php` — é só HTML normal, sem PDF.
 
 ---
 

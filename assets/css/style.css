@@ -266,6 +266,23 @@ a {
     border-left-color: var(--acento);
 }
 
+.perfil__cv-btn {
+    display: block;
+    margin-top: 1.5rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--acento);
+    color: var(--acento);
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.perfil__cv-btn:hover,
+.perfil__cv-btn:focus-visible {
+    background: var(--acento);
+    color: var(--fundo-fundo);
+}
+
 /* ---------- 5. Coluna direita (conteúdo) ---------- */
 
 .conteudo {

@@ -34,6 +34,14 @@ jobs:
           cp manifest.json dist/manifest.json
           touch dist/.nojekyll
 
+      - name: Gerar currículo em PDF
+        run: |
+          php curriculo.php > dist/curriculo-tmp.html
+          google-chrome --headless --disable-gpu --no-sandbox --no-pdf-header-footer \
+            --print-to-pdf="dist/curriculo-murilo-nogueira.pdf" \
+            "file://$(pwd)/dist/curriculo-tmp.html"
+          rm dist/curriculo-tmp.html
+
       - name: Upload do artefato do Pages
         uses: actions/upload-pages-artifact@v3
         with:

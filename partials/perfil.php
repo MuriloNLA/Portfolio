@@ -67,6 +67,9 @@
                     </li>
                 <?php endforeach; ?>
             </ul>
+            <a class="perfil__cv-btn mono" href="curriculo-murilo-nogueira.pdf" download>
+                Baixar CV (PDF)
+            </a>
         </nav>
 
         </div>
